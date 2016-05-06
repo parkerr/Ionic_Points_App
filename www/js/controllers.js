@@ -1,4 +1,4 @@
-var cardnumber = "7283072226447984";
+var cardnumber = "5311106018954888";
 
 angular.module('app.controllers', [])
   
@@ -16,7 +16,7 @@ angular.module('app.controllers', [])
                         
                         $scope.load();
 })
-})
+
    
 .controller('myMSSCardDetailsCtrl', function($scope) {
   $scope.cardDetails = {
@@ -26,7 +26,6 @@ angular.module('app.controllers', [])
   $scope.$on("$ionicView.loaded", function() {
       new QRCode(document.getElementById("qrcode"), cardnumber, 10, 100);
   });
-})
 })
    
 .controller('contactMSSCtrl', function($scope) {
