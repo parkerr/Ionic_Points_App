@@ -7,12 +7,13 @@ angular.module('app.controllers', [])
   $http.get('https://trapoints-demo-2016.herokuapp.com/api/cards/5311106018954888')
                           .success(function (response) {
                             $scope.cardDetails = response;
-                    
                           })
-                          .error(function(response){
-                            
-                          });
-                        };
+  .finally(function(){
+                          $scope.$broadcast('scroll.refreshComplete');
+                        });
+                      };
+                          
+                        
                         
                         $scope.load();
 })
@@ -24,7 +25,7 @@ angular.module('app.controllers', [])
   };
   
   $scope.$on("$ionicView.loaded", function() {
-      new QRCode(document.getElementById("qrcode"), cardnumber, 10, 100);
+      new QRCode(document.getElementById("qrcode"), cardnumber, 100, 100);
   });
 })
    
