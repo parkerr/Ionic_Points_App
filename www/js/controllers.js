@@ -25,7 +25,7 @@ angular.module('app.controllers', [])
   };
   
   $scope.$on("$ionicView.loaded", function() {
-      new QRCode(document.getElementById("qrcode"), cardnumber, 100, 100);
+      new QRCode(document.getElementById("qrcode"), cardnumber, 50, 50);
   });
 })
    
